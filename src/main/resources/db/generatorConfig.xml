@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- <classPathEntry location="C:/Users/Liuy/.m2/repository/mysql/mysql-connector-java/5.1.36" 
+		/> <classPathEntry location="D:/apache-maven-3.3.9/repo/com/oracle/ojdbc6/10.2.0.4.0/ojdbc6-10.2.0.4.0.jar"/> -->
+	<classPathEntry
+		location="D:/apache-maven-3.3.9/repo/mysql/mysql-connector-java/5.1.29/mysql-connector-java-5.1.29.jar" />
+
+	<context id="OracleTables" targetRuntime="MyBatis3"
+		defaultModelType="conditional">
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="targetPackage" value="db" />
+			<property name="targetProject" value="src/resource" />
+		</plugin>
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/lys_ssm" userId="root"
+			password="123">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.yun.cms.user.dao.entity"
+			targetProject="src/main/java">
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.yun.cms.user.dao.entity"
+			targetProject="src/main/java">
+		</sqlMapGenerator>
+		<table schema="lys_ssm" tableName="yun_user" domainObjectName="User"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+
+
+
+		<!-- <sqlMapGenerator targetPackage="com.yun.price.news.dao.entity"
+			targetProject="src/main/java">
+		</sqlMapGenerator>
+		<table schema="price" tableName="yun_news" domainObjectName="News"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table> -->
+
+	</context>
+</generatorConfiguration>

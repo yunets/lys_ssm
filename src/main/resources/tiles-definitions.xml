@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- 主页面通用模板 -->
+	<definition name="base.definition" template="/WEB-INF/page/tites/baseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/page/tites/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/page/tites/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/page/tites/body.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/page/tites/footer.jsp" />
+	</definition>
+
+
+	<definition name="user_list" extends="base.definition">
+		<put-attribute name="title" value="用户管理" />
+		<put-attribute name="body" value="/WEB-INF/page/cms/user/user_list.jsp" />
+	</definition>
+	<definition name="user_edit" extends="base.definition">
+		<put-attribute name="title" value="用户编辑" />
+		<put-attribute name="body" value="/WEB-INF/page/cms/user/user_edit.jsp" />
+	</definition>
+
+
+
+
+	<!-- 登陆页面 -->
+	<definition name="layouts.login" template="/WEB-INF/page/login.jsp" />
+	<!-- 角色页面 -->
+	<definition name="layouts.role" template="/WEB-INF/page/system/role/roleList.jsp" />
+	<!-- 实时监测页面 -->
+	<definition name="layouts.monitor" template="/WEB-INF/page/monitor/monitorList.jsp" />
+	<!-- 用户页面 -->
+	<definition name="layouts.user" template="/WEB-INF/page/system/user/userList.jsp" />
+	<!-- 基础数据 -->
+	<definition name="basedata"
+		template="/WEB-INF/page/system/basedata/basedataList.jsp" />
+
+	<definition name="layouts.certpic" template="/WEB-INF/page/layouts/makeCertPic.jsp"></definition>
+	<!-- 工程管理页面 -->
+	<definition name="layouts.project" template="/WEB-INF/page/project/projectList.jsp" />
+	<!-- 实时监测指标页面 -->
+	<definition name="norm" template="/WEB-INF/page/monitor/norm.jsp" />
+
+
+	<!-- 指标管理页面 -->
+	<definition name="layouts.quota" template="/WEB-INF/page/quota/quotaList.jsp" />
+	<!-- 工段列表页面 -->
+	<definition name="layouts.section" template="/WEB-INF/page/quota/section.jsp" />
+	<!-- 指标列表页面 -->
+	<definition name="layouts.quotasection" template="/WEB-INF/page/quota/quotaSection.jsp" />
+
+	<!-- 密钥管理 -->
+	<definition name="layouts.secretkey" template="/WEB-INF/page/secretkey/secretkeyList.jsp" />
+
+
+</tiles-definitions>
